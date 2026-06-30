@@ -1,7 +1,104 @@
+:root{
+    --bg: #c0ffdc;
+    --darkblue: #2c3e50;
+    --lightblue: #7bbcfc;
+    --green: #3ba66b;
+    --darkgreen: #1d5436;
+    --text: #111;
+    --white: #ffffff;
+}
+
 *,
-*::after,
-*::before{
+*::before,
+*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+::selection{
+    color: var(--lightblue);
+    background-color: var(--darkblue);
+}
+
+::-webkit-selection{
+    color: var(--lightblue);
+    background-color: var(--darkblue);
+}
+
+#loader{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    background: var(--white);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#loader .pill img{
+    width: 100vw;
+    max-width: 500px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'SourceSans3', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+img{
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+a{
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-fixed{
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    height:40px;
+    width:40px;
+    border: var(--darkblue) solid 2px;
+    border-radius: 10px;
+    background-color: var(--bg);
+    color: var(--darkblue);
+    padding: 5px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+
+.btn-fixed:hover{
+    transform: scale(1.15);
+}
+
+.btn-fixed:active{
+    transform: scale(0.95);
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('../fonts/SourceSans3-Black.ttf') format('truetype');
 }

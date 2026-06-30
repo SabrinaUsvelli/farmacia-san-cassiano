@@ -1,0 +1,14 @@
+ul{
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+}
+
+a{
+    color: var(--darkgreen);
+    transition: all 0.2s linear;
+}
+
+a:hover{
+    color: var(--green);
+}
