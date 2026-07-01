@@ -1,3 +1,69 @@
 body{
     background-color: var(--bg);
 }
+
+.hero{
+    height: auto;
+    width: 300px;
+}
+
+section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 100px 0 50px;
+}
+
+.containertext{
+    max-width: 900px;
+    padding-top: 10px;
+}
+
+h1{
+    font-size: 2.2rem;
+}
+
+.farmtext{
+    padding: 0 20px;
+}
+
+.farm{
+    height: auto;
+    width: 250px;
+    box-shadow: 0 0 0 2px var(--darkgreen);
+    border-radius: 14px;
+    transition: all 0.33s linear;
+}
+
+.farm:hover{
+    box-shadow: 0 0 0 7px var(--darkgreen);
+    transform: scale(0.95);
+}
+
+.maps{
+    font-size: 1.4rem;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    color: var(--darkgreen);
+}
+
+.maps svg{
+    width:40px;
+    height: 40px;
+    color: var(--darkgreen);
+    text-decoration: underline;
+}
+
+.maps:hover{
+    color: var(--darkgreen);
+    text-decoration: none;
+}
