@@ -37,8 +37,8 @@
     <main>
         <section class="farmbox">
             <div class="containertext">
-                <h1>Farmacia San Cassiano</h1>
-                <p class="farmtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reprehenderit iure officiis odit, laborum assumenda eos nostrum aut eum tempore ab quod veritatis perspiciatis reiciendis fugit totam facilis enim fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti molestiae labore temporibus delectus recusandae, repellendus at error tempora neque vitae fugit ad fugiat architecto vero expedita facilis. Dolorem, eius eligendi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam ipsam cum ut, animi dignissimos repellendus perspiciatis. Est temporibus, similique asperiores sapiente molestias ex adipisci numquam exercitationem reiciendis! Quod, libero doloremque!</p>
+                <h1 id="multi_title1" class="fade-in">Farmacia San Cassiano</h1>
+                <p class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reprehenderit iure officiis odit, laborum assumenda eos nostrum aut eum tempore ab quod veritatis perspiciatis reiciendis fugit totam facilis enim fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti molestiae labore temporibus delectus recusandae, repellendus at error tempora neque vitae fugit ad fugiat architecto vero expedita facilis. Dolorem, eius eligendi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam ipsam cum ut, animi dignissimos repellendus perspiciatis. Est temporibus, similique asperiores sapiente molestias ex adipisci numquam exercitationem reiciendis! Quod, libero doloremque!</p>
                 <a class="maps" href="https://www.google.com/maps/dir//Farmacia+S.+Cassiano,+Via+S.+Cassiano,+32,+48013+Brisighella+RA/@44.230792,11.7865661,15z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x132b3f6dee4182d1:0xee448a5dece2cedd!2m2!1d11.6887311!2d44.1480243?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -53,8 +53,8 @@
         </section>
         <section class="farmbox">
             <div class="containertext">
-                <h1>Enrico Usvelli</h1>
-                <p class="farmtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reprehenderit iure officiis odit, laborum assumenda eos nostrum aut eum tempore ab quod veritatis perspiciatis reiciendis fugit totam facilis enim fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti molestiae labore temporibus delectus recusandae, repellendus at error tempora neque vitae fugit ad fugiat architecto vero expedita facilis. Dolorem, eius eligendi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam ipsam cum ut, animi dignissimos repellendus perspiciatis. Est temporibus, similique asperiores sapiente molestias ex adipisci numquam exercitationem reiciendis! Quod, libero doloremque!</p>
+                <h1 id="multi_title2" class="fade-in">Enrico Usvelli</h1>
+                <p class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem reprehenderit iure officiis odit, laborum assumenda eos nostrum aut eum tempore ab quod veritatis perspiciatis reiciendis fugit totam facilis enim fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti molestiae labore temporibus delectus recusandae, repellendus at error tempora neque vitae fugit ad fugiat architecto vero expedita facilis. Dolorem, eius eligendi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam ipsam cum ut, animi dignissimos repellendus perspiciatis. Est temporibus, similique asperiores sapiente molestias ex adipisci numquam exercitationem reiciendis! Quod, libero doloremque!</p>
             </div>
             <div>
                 <img class="farm enry" src="./assets/images/enrico.jpg" alt="Enrico Usvelli">
@@ -70,5 +70,38 @@
         </svg>
     </a>
     <script src="./assets/js/loader.js"></script>
+    <script>
+        let activeText = 1,
+            titles1 = [
+                "Farmacia San Cassiano",
+                "Chi Siamo"
+            ],
+            titles2 = [
+                "Enrico Usvelli",
+                "Farmacista"
+            ]
+    changeText()
+    setInterval(function(){
+        changeText()
+    },3000)
+    function changeText(){
+        if(activeText){
+            activeText = 0
+        } else {
+            activeText = 1
+        }
+        document.getElementById("multi_title1").classList.add("fade-in")
+        document.getElementById("multi_title2").classList.add("fade-in")
+        setTimeout(()=>{
+            document.getElementById("multi_title1").innerHTML = titles1[activeText]
+            document.getElementById("multi_title2").innerHTML = titles2[activeText]
+        }, 250)
+        setTimeout(()=>{
+            document.getElementById("multi_title1").classList.remove("fade-in") 
+            document.getElementById("multi_title2").classList.remove("fade-in") 
+        }, 500)
+
+    }
+    </script>
 </body>
 </html>

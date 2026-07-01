@@ -29,7 +29,23 @@ h1{
     font-size: 2.2rem;
 }
 
-.farmtext{
+.fade-in{
+    animation: fade-out-in 0.5s ease forwards;
+}
+
+@keyframes fade-out-in {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.descr{
     padding: 0 20px;
 }
 
